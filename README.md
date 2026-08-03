@@ -4,7 +4,7 @@
 
 # AURA (Autonomous & Unmanned Reconnaissance Agent) 🚙
 
-AURA is an autonomous underwater vehicle that uses hand gestures as an interface to a computer vision system to replace the use of a joystick. This project was built with the input of Hack Club.
+AURA is an autonomous vehicle that uses hand gestures as an interface to a computer vision system to replace the use of a joystick. This project was built with the input of Hack Club.
 
 ## 🌟 Key Features
 - Dual-Hand Control: Left hand pinch to proportional throttle and right hand gestures to steering using OpenCV and MediaPipe.
