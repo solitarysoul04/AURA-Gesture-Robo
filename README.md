@@ -1,4 +1,5 @@
-<img width="610" height="447" alt="image" src="https://github.com/user-attachments/assets/614c95ad-f088-43ab-b502-9310dd4aae3c" />
+<img width="573" height="447" alt="image" src="https://github.com/user-attachments/assets/435f5ecc-cc68-42f7-af40-14ef1d847f9c" />
+
 
 
 # AURA (Autonomous & Unmanned Reconnaissance Agent) 🚙
