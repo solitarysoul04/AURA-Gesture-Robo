@@ -1,10 +1,10 @@
 <img width="610" height="447" alt="image" src="https://github.com/user-attachments/assets/614c95ad-f088-43ab-b502-9310dd4aae3c" />
 
-*> Banner: Onshape CAD Rendering of the AURA Rover (Hardware Build Pending)*
+*> Onshape CAD Rendering of the AURA Rover (Hardware Build Pending)*
 
 # AURA (Autonomous & Unmanned Reconnaissance Agent) 🚙
 
-AURA is an autonomous vehicle that uses hand gestures as an interface to a computer vision system to replace the use of a joystick. This project was built with the input of Hack Club.
+AURA is an autonomous vehicle that uses a camera to see and hand gestures as an interface to a computer vision system connected via webcam of the computer before which I am sitting to replace the use of a joystick. This project was built with the input of Hack Club.
 
 ## 🌟 Key Features
 - Dual-Hand Control: Left hand pinch to proportional throttle and right hand gestures to steering using OpenCV and MediaPipe.
