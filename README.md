@@ -1,6 +1,5 @@
 <img width="610" height="447" alt="image" src="https://github.com/user-attachments/assets/614c95ad-f088-43ab-b502-9310dd4aae3c" />
 
-*> Onshape CAD Rendering of the AURA Rover (Hardware Build Pending)*
 
 # AURA (Autonomous & Unmanned Reconnaissance Agent) 🚙
 
@@ -51,6 +50,35 @@ AURA is an autonomous vehicle that uses a camera to see and hand gestures as an 
 ## 📐 3D CAD Model
 This build was done natively in Onshape, with the structural layout and stacking of components. 
 **[Link to Onshape Public 3D Model](https://cad.onshape.com/documents/1ed37dd0b596b430698f5eb2/w/aa1a3a995dd5a0a3a9e055b1/e/f5aa9d2bf4de66af82fadf2e?renderMode=0&uiState=6a70e69f9e1a484049917df2)**
+
+## 🛠️ Assembly Instructions
+
+Once I have the required hardware parts I will put the parts together and wire the hardware/electronics as follows:
+
+**1. Mechanical**
+* Using the screws included in the kit, attach the EasyMech Warrior aluminium chassis.
+* Attach 6mm Hex Motor Couplings to each of the four 300 RPM Johnson Geared Motors, and press the grub screws. 
+* Install the motors on chassis brackets, fit the 85mm knobby wheels on the hex couplings.
+
+**2. Electronics**
+* The electronics will be sandwiched between the chassis decks as I'm not using a custom PCB. 
+* The nylon zip ties from the BOM will be used to securely attach the 11.1V Li-Ion battery to the bottom deck.
+* The L298N Motor Driver, LM2596 Buck Converter and the Arduino Nanos will be glued to the board using double sided foam tape as required, and hot glue will be used. 
+* The ESP32-CAM will be glued to the top deck mounts that I designed in the CAD model as well as the front and rear HC-SR04 ultrasonic sensors are glued to.
+
+**3. Wiring**
+* Connect 11.1V battery to the main power connectors on the L298N motor driver. 
+* Rip off the battery wires and connect to the LM2596 Buck Converter. 
+* Tune the Buck Converter's potentiometer with the multimeter so the output is 100% with no loading attached to the logic boards.
+* Use the Mermaid wiring diagram below to connect the 5V power rail to the Arduinos, ESP32-CAM and sensors. 
+* Attach the four DC motors to the L298N's OUT1/OUT2 and OUT3/OUT4 blocks.
+
+**4. Firmware**
+* Install Arduino IDE. Install the library “RF24” for the radios.
+* Connect the base station Arduino Nano to the laptop using the USB cable, and upload the `Base_Station.ino` file.
+* Upload the Arduino Nano to the rover, and upload the file called `Rover_Brain.ino`.
+* To install the corresponding dependencies for the Python dashboard, open up the laptop terminal and enter the commands: `pip install opencv-python mediapipe pyserial numpy requests`.
+* Change the COM port to the PORT your base station Nano is using: and run the script to open the hand tracking GUI.
 
 ## 🔌 Hardware Wiring Diagram
 
