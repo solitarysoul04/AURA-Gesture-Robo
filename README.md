@@ -69,7 +69,7 @@ Once I have the required hardware parts I will put the parts together and wire t
 
 **3. Wiring**
 * Connect 11.1V battery to the main power connectors on the L298N motor driver. 
-* Rip off the battery wires and connect to the LM2596 Buck Converter. 
+* Strip off the battery wires and connect to the LM2596 Buck Converter. 
 * Tune the Buck Converter's potentiometer with the multimeter so the output is 100% with no loading attached to the logic boards.
 * Use the Mermaid wiring diagram below to connect the 5V power rail to the Arduinos, ESP32-CAM and sensors. 
 * Attach the four DC motors to the L298N's OUT1/OUT2 and OUT3/OUT4 blocks.
@@ -77,7 +77,7 @@ Once I have the required hardware parts I will put the parts together and wire t
 **4. Firmware**
 * Install Arduino IDE. Install the library “RF24” for the radios.
 * Connect the base station Arduino Nano to the laptop using the USB cable, and upload the `Base_Station.ino` file.
-* Upload the Arduino Nano to the rover, and upload the file called `Rover_Brain.ino`.
+* Upload the code on Arduino Nano to the rover, and upload the file called `Rover_Brain.ino`.
 * To install the corresponding dependencies for the Python dashboard, open up the laptop terminal and enter the commands: `pip install opencv-python mediapipe pyserial numpy requests`.
 * Change the COM port to the PORT your base station Nano is using: and run the script to open the hand tracking GUI.
 
