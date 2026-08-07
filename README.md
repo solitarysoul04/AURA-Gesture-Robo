@@ -9,7 +9,7 @@ AURA Rover is a visionary project which I brainstormed during building for Macon
 ## 🌟 Key Features
 - Dual-Hand Control: Pinching fingers of left hand will trigger the throttle and right hand gestures will act as an steering using OpenCV and MediaPipe.
 - Dual-Band Architecture: Video will be transmitted via ESP32-CAM high-bandwidth FPV Wi-Fi and for Zero-Latency Motor Controls, 2.4GHz RF on nRF24L01 will be used.
-- Two HC-SR04 ultrasonic sensors: Since the rover will be autonomous, for safety and instant breaking of the rover, two ultrasonic sensors (one at front and another at back) will keep a watch on obstacles and will avoid any crash by stopping rover if something is detected within 15cm and will not accept the wireless commands.
+- Two HC-SR04 ultrasonic sensors: Since the rover will be autonomous, for safety and instant braking of the rover, two ultrasonic sensors (one at front and another at back) will keep a watch on obstacles and will avoid any crash by stopping rover if something is detected within 15cm and will not accept the wireless commands.
 
 ## 🛒 BoM 
 | Category | Product Name | SKU | Qty | Price/Unit (INR) | Link |
@@ -62,7 +62,7 @@ Once I have the required hardware parts I will put the parts together and wire t
 * Fit the wheels on motors, and install them on chassis along with motors. 
 
 **2. Electronics**
-* The L298N Motor Driver, LM2596 Buck Converter and Arduino Nanos will be glued to the base using wither double sided foam tape of hot glue as seem necessary.
+* The L298N Motor Driver, LM2596 Buck Converter and Arduino Nanos will be glued to the base using either double sided foam tape or hot glue as seem necessary.
 * ESP32-CAM, HC-SR04 and other necessary components will be glued accordingly to the CAD Model submitted.
 * 11.1V Li-ion battery will be tied up with nylon zip to fix it.
 
