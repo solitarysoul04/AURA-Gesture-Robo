@@ -2,14 +2,14 @@
 
 
 
-# AURA (Autonomous & Unmanned Reconnaissance Agent) 🚙
+# AURA (Autonomous & Unmanned Reconnaissance Agent) Rover🚙
 
-AURA is an autonomous vehicle that uses a camera to see and hand gestures as an interface to a computer vision system connected via webcam of the computer before which I am sitting to replace the use of a joystick. This project was built with the input of Hack Club.
+AURA Rover is a visionary project which I brainstormed during building for Macondo by HackClub. It is an autonomous project that will use a computer vision interface which will incorporate MediaPipe and OpenCV which will detect and read the hand gestures on-board for hopefully successful movement of the rover. This idea was brainstormed to replace the use of joystick and sit back lazy controlling the rover with just your physical hands assisted by ESP32-CAM feed on your system.
 
 ## 🌟 Key Features
-- Dual-Hand Control: Left hand pinch to proportional throttle and right hand gestures to steering using OpenCV and MediaPipe.
-- Dual-Band Architecture: High-bandwidth FPV Wi-Fi video transmission (on ESP32-CAM) and Zero-Latency Motor Controls (2.4GHz RF on nRF24L01).
-- Two HC-SR04 ultrasonic sensors: with autonomous safety braking on the rover. If an obstacle comes in between the 15cm the rover will automatically stop and will not accept wireless commands.
+- Dual-Hand Control: Pinching fingers of left hand will trigger the throttle and right hand gestures will act as an steering using OpenCV and MediaPipe.
+- Dual-Band Architecture: Video will be transmitted via ESP32-CAM high-bandwidth FPV Wi-Fi and for Zero-Latency Motor Controls, 2.4GHz RF on nRF24L01 will be used.
+- Two HC-SR04 ultrasonic sensors: Since the rover will be autonomous, for safety and instant breaking of the rover, two ultrasonic sensors (one at front and another at back) will keep a watch on obstacles and will avoid any crash by stopping rover if something is detected within 15cm and will not accept the wireless commands.
 
 ## 🛒 BoM 
 | Category | Product Name | SKU | Qty | Price/Unit (INR) | Link |
@@ -57,29 +57,26 @@ This build was done natively in Onshape, with the structural layout and stacking
 Once I have the required hardware parts I will put the parts together and wire the hardware/electronics as follows:
 
 **1. Mechanical**
-* Using the screws included in the kit, attach the EasyMech Warrior aluminium chassis.
-* Attach 6mm Hex Motor Couplings to each of the four 300 RPM Johnson Geared Motors, and press the grub screws. 
-* Install the motors on chassis brackets, fit the 85mm knobby wheels on the hex couplings.
+* First step will be to assemble the EasyMech Warrior aluminium chassis using the screws and resources included within the kit.
+* Further, I will attach the 6mm Motor Couplings to each of four Johnson Geared Motors and tighten them up.
+* Fit the wheels on motors, and install them on chassis along with motors. 
 
 **2. Electronics**
-* The electronics will be sandwiched between the chassis decks as I'm not using a custom PCB. 
-* The nylon zip ties from the BOM will be used to securely attach the 11.1V Li-Ion battery to the bottom deck.
-* The L298N Motor Driver, LM2596 Buck Converter and the Arduino Nanos will be glued to the board using double sided foam tape as required, and hot glue will be used. 
-* The ESP32-CAM will be glued to the top deck mounts that I designed in the CAD model as well as the front and rear HC-SR04 ultrasonic sensors are glued to.
+* The L298N Motor Driver, LM2596 Buck Converter and Arduino Nanos will be glued to the base using wither double sided foam tape of hot glue as seem necessary.
+* ESP32-CAM, HC-SR04 and other necessary components will be glued accordingly to the CAD Model submitted.
+* 11.1V Li-ion battery will be tied up with nylon zip to fix it.
 
 **3. Wiring**
-* Connect 11.1V battery to the main power connectors on the L298N motor driver. 
-* Strip off the battery wires and connect to the LM2596 Buck Converter. 
-* Tune the Buck Converter's potentiometer with the multimeter so the output is 100% with no loading attached to the logic boards.
-* Use the Mermaid wiring diagram below to connect the 5V power rail to the Arduinos, ESP32-CAM and sensors. 
-* Attach the four DC motors to the L298N's OUT1/OUT2 and OUT3/OUT4 blocks.
+* 11.1V battery will be connected to main power connectors on L298N motor driver.
+* Battery wires will be stripped off and will be connected to LM2596 Buck Converter.
+* All other necessary connections of ESP32-CAM, Arduino, 5V, etc. will be done with reference to below Mermaid wiring diagram.
 
 **4. Firmware**
-* Install Arduino IDE. Install the library “RF24” for the radios.
-* Connect the base station Arduino Nano to the laptop using the USB cable, and upload the `Base_Station.ino` file.
-* Upload the code on Arduino Nano to the rover, and upload the file called `Rover_Brain.ino`.
-* To install the corresponding dependencies for the Python dashboard, open up the laptop terminal and enter the commands: `pip install opencv-python mediapipe pyserial numpy requests`.
-* Change the COM port to the PORT your base station Nano is using: and run the script to open the hand tracking GUI.
+* For logic processing, we will first install Arduino IDE to program the microcontroller and "RF24" library too for the radios.
+* Base station Arduino Nano will be connected to laptop using the USB Cable to upload the `Base_Station.ino` file.
+* For rover movement, another Arduino Nano will be updated with the code file `Rover_Brain.ino`.
+* For successful working of the scripts, firmwares and GUI, corresponding dependencies need to be installed... This must be done via the terminal by entering command: `pip install opencv-python mediapipe pyserial numpy requests`.
+* Finally, COM port need to be changed into the PORT of our base station Arduino Nano and run the script `Mission_Control.py` to open the hand tracking GUI.
 
 ## 🔌 Hardware Wiring Diagram
 
